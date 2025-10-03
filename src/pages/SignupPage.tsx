@@ -37,7 +37,15 @@ export default function SignupPage() {
       await signUp(formData.email, formData.password, formData.username);
       window.location.href = '/';
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'An error occurred');
+      if (err instanceof Error) {
+        if (err.message.includes('Email not confirmed')) {
+          setError('Email not confirmed. Please check your inbox (and spam) for a verification link. If needed, try signing up again.');
+        } else {
+          setError(err.message);
+        }
+      } else {
+        setError('An error occurred');
+      }
     } finally {
       setLoading(false);
     }
