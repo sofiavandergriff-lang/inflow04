@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Zap, Calendar, BarChart3, TrendingUp, Bot, Sparkles } from 'lucide-react';
+import { Users, Zap, Calendar, ChartBar as BarChart3, TrendingUp, Bot, Sparkles } from 'lucide-react';
 
 export default function FeaturesPage() {
   const features = [
