@@ -109,7 +109,7 @@ export default function FeaturesPage() {
                 onClick={() => window.location.href = '/signup'}
                 className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25"
               >
-                Start Free Trial
+                Sign Up & Access Inflow
               </button>
             </div>
           </div>
