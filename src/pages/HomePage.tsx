@@ -89,7 +89,7 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <button 
-                onClick={() => onNavigate?.('pricing')}
+                onClick={() => window.location.href = '/signup'}
                 className="group bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-10 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-pink-500/25"
               >
                 Get Started
@@ -97,7 +97,7 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
               
               <button 
                 onClick={onScrollToVideo}
-                className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 text-gray-900 hover:text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border border-pink-200/50 hover:border-transparent hover-lift"
+                className="flex items-center space-x-2 bg-white/80 backdrop-blur-sm text-gray-900 px-8 py-4 rounded-2xl font-semibold text-lg transition-all duration-300 border border-pink-200/50 hover-lift"
               >
                 <Play className="w-5 h-5 text-pink-600 group-hover:text-white transition-colors" />
                 <span>See Demo</span>
@@ -271,7 +271,7 @@ export default function HomePage({ onNavigate, onScrollToVideo }: HomePageProps)
               Join thousands of successful businesses using Inflow to streamline their operations and accelerate growth.
             </p>
             <button 
-              onClick={() => onNavigate?.('pricing')}
+              onClick={() => window.location.href = '/signup'}
               className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-12 py-5 rounded-2xl font-bold text-xl transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-pink-500/25"
             >
               Start Your 7-Day Free Trial

@@ -104,12 +104,12 @@ export default function FeaturesPage() {
             <p className="text-xl text-gray-600 mb-8 font-light">
               See how these powerful features can streamline your business operations and accelerate growth.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25">
+            <div className="flex justify-center">
+              <button 
+                onClick={() => window.location.href = '/signup'}
+                className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25"
+              >
                 Start Free Trial
-              </button>
-              <button className="bg-white hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 text-gray-900 hover:text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-300 border-2 border-transparent bg-clip-padding hover:border-transparent shadow-sm hover:shadow-lg" style={{ backgroundImage: 'linear-gradient(white, white), linear-gradient(90deg, #FF4DA6, #7C3AED)', backgroundOrigin: 'border-box', backgroundClip: 'padding-box, border-box' }}>
-                Schedule Demo
               </button>
             </div>
           </div>

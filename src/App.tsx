@@ -17,6 +17,16 @@ import SignupPage from './pages/SignupPage';
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
 
+  useEffect(() => {
+    const handleNavigate = (event: CustomEvent) => {
+      setCurrentPage(event.detail);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    window.addEventListener('navigate', handleNavigate as EventListener);
+    return () => window.removeEventListener('navigate', handleNavigate as EventListener);
+  }, []);
+
   const handleNavigation = (page: string) => {
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });

@@ -86,7 +86,7 @@ export default function PrivacyPage() {
             <p className="text-gray-600 leading-relaxed">
               You may request access, correction, or deletion of your personal data by contacting us at{' '}
               <a href="mailto:support@inflow.com" className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent hover:from-pink-600 hover:to-purple-700 transition-all duration-300">
-                support@inflow.com
+                info@inflow.com
               </a>.
             </p>
           </div>

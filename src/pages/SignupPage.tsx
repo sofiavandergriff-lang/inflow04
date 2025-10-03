@@ -9,6 +9,7 @@ export default function SignupPage() {
     password: '',
     username: '',
   });
+  const [agreeToPrivacy, setAgreeToPrivacy] = useState(false);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -29,6 +30,9 @@ export default function SignupPage() {
     try {
       if (!formData.username) {
         throw new Error('Username is required');
+      }
+      if (!agreeToPrivacy) {
+        throw new Error('You must agree to the Privacy Policy to create an account');
       }
       await signUp(formData.email, formData.password, formData.username);
       window.location.href = '/';
@@ -70,7 +74,7 @@ export default function SignupPage() {
             className="flex items-center space-x-2 cursor-pointer hover:opacity-80 transition-opacity"
             onClick={handleLogoClick}
           >
-            <div className="relative h-8 w-[120px]">
+            <div className="relative h-10 w-[156px]">
               <div className="h-full w-full bg-gradient-to-r from-[#FF4DA6] to-[#7C3AED]"
                 style={{
                   WebkitMaskImage: "url('/dffdf.png')",
@@ -167,6 +171,28 @@ export default function SignupPage() {
               </div>
             </div>
 
+            <div className="flex items-start space-x-2">
+              <input
+                type="checkbox"
+                id="privacy-agreement"
+                checked={agreeToPrivacy}
+                onChange={(e) => setAgreeToPrivacy(e.target.checked)}
+                className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 mt-0.5"
+                required
+              />
+              <label htmlFor="privacy-agreement" className="text-sm text-gray-600">
+                I agree to the{' '}
+                <a
+                  href="/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 font-medium transition-colors underline"
+                >
+                  Privacy Policy
+                </a>
+              </label>
+            </div>
+
             <button
               type="submit"
               disabled={loading}
@@ -215,7 +241,20 @@ export default function SignupPage() {
         {/* Footer */}
         <div className="absolute bottom-4 left-6 right-6 sm:left-8 sm:right-8 flex flex-col sm:flex-row justify-between text-xs text-gray-400 space-y-1 sm:space-y-0">
           <span>Copyright © 2025 Inflow Enterprises LTD.</span>
-          <a href="/privacy" className="hover:text-gray-600 transition-colors">
+          <a 
+            href="/privacy" 
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = '/#privacy';
+              setTimeout(() => {
+                if (window.location.pathname === '/') {
+                  const event = new CustomEvent('navigate', { detail: 'privacy' });
+                  window.dispatchEvent(event);
+                }
+              }, 100);
+            }}
+            className="hover:text-gray-600 transition-colors cursor-pointer"
+          >
             Privacy Policy
           </a>
         </div>

@@ -26,7 +26,9 @@ export default function Footer({ onNavigate }: FooterProps) {
   };
 
   const handleContactSupport = () => {
-    window.location.href = 'mailto:info@inflow.com?subject=Support Request';
+    if (onNavigate) {
+      onNavigate('contact');
+    }
   };
 
   return (
@@ -55,7 +57,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               <p className="text-gray-600 text-sm">Email:</p>
               <a 
                 href="mailto:info@inflow.com" 
-                className="text-primary-600 hover:text-primary-700 transition-colors text-sm"
+                className="bg-gradient-to-r from-pink-500 to-purple-600 bg-clip-text text-transparent hover:from-pink-600 hover:to-purple-700 transition-all duration-300 text-sm font-medium"
               >
                 info@inflow.com
               </a>

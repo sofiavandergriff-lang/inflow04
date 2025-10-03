@@ -118,7 +118,17 @@ export default function FAQPage() {
               </p>
               <a
                 href="mailto:info@inflow.com"
-               className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-3 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href = '/#contact';
+                  setTimeout(() => {
+                    if (window.location.pathname === '/') {
+                      const event = new CustomEvent('navigate', { detail: 'contact' });
+                      window.dispatchEvent(event);
+                    }
+                  }, 100);
+                }}
+                className="inline-block bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white px-8 py-3 rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-pink-500/25 cursor-pointer"
               >
                 Contact Support
               </a>
