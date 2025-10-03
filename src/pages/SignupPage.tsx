@@ -279,15 +279,6 @@ export default function SignupPage() {
           >
             Privacy Policy
           </a>
-                  const event = new CustomEvent('navigate', { detail: 'privacy' });
-                  window.dispatchEvent(event);
-                }
-              }, 100);
-            }}
-            className="hover:text-gray-600 transition-colors cursor-pointer"
-          >
-            Privacy Policy
-          </a>
         </div>
       </div>
 
