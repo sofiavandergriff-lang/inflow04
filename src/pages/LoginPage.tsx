@@ -215,12 +215,24 @@ export default function LoginPage() {
         <div className="absolute bottom-4 left-6 right-6 sm:left-8 sm:right-8 flex flex-col sm:flex-row justify-between text-xs text-gray-400 space-y-1 sm:space-y-0">
           <span>Copyright © 2025 Inflow Enterprises LTD.</span>
           <a 
-            href="/privacy" 
+            href="#"
             onClick={(e) => {
               e.preventDefault();
-              window.location.href = '/#privacy';
+              window.open('/#privacy', '_blank');
               setTimeout(() => {
-                if (window.location.pathname === '/') {
+                const newWindow = window.open('/#privacy', '_blank');
+                if (newWindow) {
+                  newWindow.addEventListener('load', () => {
+                    const event = new CustomEvent('navigate', { detail: 'privacy' });
+                    newWindow.dispatchEvent(event);
+                  });
+                }
+              }, 100);
+            }}
+            className="hover:text-gray-600 transition-colors cursor-pointer"
+          >
+            Privacy Policy
+          </a>
                   const event = new CustomEvent('navigate', { detail: 'privacy' });
                   window.dispatchEvent(event);
                 }
